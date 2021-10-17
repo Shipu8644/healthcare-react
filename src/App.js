@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Header from '../src/pages/Shared/Header/Header'
 import Home from './pages/Home/Home/Home';
 import NotFound from './pages/NotFound/NotFound';
+import Footer from './pages/Shared/Footer/Footer';
 
 
 function App() {
@@ -25,6 +26,7 @@ function App() {
             <NotFound></NotFound>
           </Route>
         </Switch>
+        <Footer></Footer>
       </BrowserRouter>
 
     </div>

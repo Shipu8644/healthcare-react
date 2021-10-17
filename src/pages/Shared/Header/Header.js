@@ -5,10 +5,10 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div>
-            <Navbar className='text-white' bg="info" expand="lg" >
+        <div className='pb-3'>
+            <Navbar fixed="top" className='text-white ' bg="info" expand="lg" >
                 <Container fluid className="container " >
-                    <Navbar.Brand className="text-white me-5" href="#">Baby Care</Navbar.Brand>
+                    <Navbar.Brand className="text-white me-5 " href="#">Baby Care</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll"  >
                         <Nav
@@ -37,8 +37,6 @@ const Header = () => {
                                 className="me-2"
                                 aria-label="Search"
                             />
-
-
                         </Form>
                     </Navbar.Collapse>
                 </Container>
