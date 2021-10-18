@@ -1,12 +1,16 @@
 
 import React from 'react';
-import { Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
+import { Container, Form, FormControl, Nav, Navbar, Spinner } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../../hooks/useAuth';
+import './Header.css'
 const Header = () => {
-    const { user, logout } = useAuth();
+    const { user, logout, isLoading } = useAuth();
     console.log(user)
+    if (isLoading) {
+        return <Spinner animation="border" variant="danger" />
+    }
     return (
         <div className='pb-1'>
             <Navbar fixed="top" className='text-white ' bg="info" expand="lg" >
@@ -18,6 +22,7 @@ const Header = () => {
                             className="me-auto my-2 my-lg-0"
                             style={{ maxHeight: '150px' }}
                             navbarScroll
+
                         >
                             <Nav.Link as={HashLink} className="text-white me-3" to='/home#home'>Home</Nav.Link>
                             <Nav.Link className="text-white me-3" href="#action2">About </Nav.Link>
@@ -28,7 +33,7 @@ const Header = () => {
 
                         </Nav >
 
-                        {user?.email && user?.displayName ?
+                        {user?.email ?
                             <div className='d-flex flex-column flex-lg-row'>
                                 <Nav.Link onClick={logout} className="text-white me-2" as={Link} to='/login'>Logout</Nav.Link>
                                 <span className='mt-2 text-warning'>Sign in as: {user.displayName}</span>

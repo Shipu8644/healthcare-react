@@ -4,6 +4,7 @@ import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase
 import initializeAuthentication from '../Login/Firebase/firebase.init';
 import { Form } from 'react-bootstrap';
 import { useHistory } from 'react-router';
+
 initializeAuthentication();
 const Registration = () => {
     const auth = getAuth();
@@ -27,6 +28,9 @@ const Registration = () => {
     const handlePasswordChange = e => {
         setPassword(e.target.value);
     }
+
+
+
     const handleSignUp = (e) => {
         e.preventDefault();
         console.log(email, password, name);
@@ -41,6 +45,8 @@ const Registration = () => {
         }
         registerNewUser(email, password);
     }
+
+
     const registerNewUser = (email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then((result) => {

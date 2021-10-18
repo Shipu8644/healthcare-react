@@ -6,6 +6,7 @@ import './Login.css';
 import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
 import initializeAuthentication from '../Firebase/firebase.init';
 import { Form } from 'react-bootstrap';
+import useFirebase from '../../../hooks/useFirebase';
 initializeAuthentication();
 const Login = () => {
     const auth = getAuth();
@@ -20,6 +21,7 @@ const Login = () => {
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
     }
+
 
     //    getpassword
     const handlePasswordChange = e => {
@@ -39,6 +41,8 @@ const Login = () => {
         }
         processLogIn(email, password);
     }
+
+
 
     const processLogIn = (email, password) => {
         signInWithEmailAndPassword(auth, email, password)
