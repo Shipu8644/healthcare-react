@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 const Header = () => {
     return (
-        <div className='pb-3'>
+        <div className='pb-5'>
             <Navbar fixed="top" className='text-white ' bg="info" expand="lg" >
                 <Container fluid className="container " >
                     <Navbar.Brand className="text-white me-5 " href="#">Baby Care</Navbar.Brand>
@@ -20,16 +20,18 @@ const Header = () => {
                             <Nav.Link className="text-white me-3" href="#action2">About Us</Nav.Link>
                             <Nav.Link className="text-white me-3" href="#action2">Services</Nav.Link>
                             <Nav.Link className="text-white me-3" href="#action2">Doctors</Nav.Link>
-                            <Nav.Link className="text-white me-3" href="#action2">Blog</Nav.Link>
+
                             <Nav.Link className="text-white me-3" href="#action2">Contact Us</Nav.Link>
 
                         </Nav >
 
 
-                        <Nav.Link className="text-white me-2" href="#action2">Login</Nav.Link>
+                        <Nav.Link className="text-white me-2" as={Link} to='/login'>Login</Nav.Link>
                         <span className="text-warning me-2">Sign in as: Monjurur Kader Shipu</span>
 
-                        <Form className="d-flex">
+                        <Nav.Link className="text-white me-2" as={Link} to='/registration'>Registration</Nav.Link>
+
+                        <Form className="d-flex ">
 
                             <FormControl
                                 type="search"
