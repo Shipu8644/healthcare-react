@@ -5,7 +5,7 @@ const Footer = () => {
     return (
         <div>
             <div className='bg-info p-1 mb-1 mt-5'>
-                <div className='footer d-flex  mt-5 mb-2 justify-content-around '>
+                <div className='footer d-flex  mt-5 mb-2 justify-content-around w-100 '>
                     <div>
                         <h6 className='text-white'>About Us</h6>
                         <a href="#">Aim</a>

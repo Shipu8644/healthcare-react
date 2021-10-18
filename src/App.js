@@ -9,37 +9,40 @@ import Footer from './pages/Shared/Footer/Footer';
 import Login from './pages/Login/Login/Login';
 import Registration from './pages/Registration/Registration';
 import Details from './pages/Details/Details';
+import AuthProvider from './pages/context/AuthProvider';
+import PrivateRoute from './pages/Login/PrivateRoute/PrivateRoute';
 
 
 function App() {
 
   return (
     <div className="App">
-      <BrowserRouter>
-        <Header></Header>
-        <Switch>
-          <Route exact path='/'>
-            <Home></Home>
-          </Route>
-          <Route path='/home'>
-            <Home></Home>
-          </Route>
-          <Route path='/login'>
-            <Login></Login>
-          </Route>
-          <Route path='/registration'>
-            <Registration></Registration>
-          </Route>
-          <Route path='/detail/:id'>
-            <Details></Details>
-          </Route>
-          <Route to='*'>
-            <NotFound></NotFound>
-          </Route>
-        </Switch>
-        <Footer></Footer>
-      </BrowserRouter>
-
+      <AuthProvider>
+        <BrowserRouter>
+          <Header></Header>
+          <Switch>
+            <Route exact path='/'>
+              <Home></Home>
+            </Route>
+            <Route path='/home'>
+              <Home></Home>
+            </Route>
+            <Route path='/login'>
+              <Login></Login>
+            </Route>
+            <Route path='/registration'>
+              <Registration></Registration>
+            </Route>
+            <PrivateRoute path='/detail/:id'>
+              <Details></Details>
+            </PrivateRoute>
+            <Route to='*'>
+              <NotFound></NotFound>
+            </Route>
+          </Switch>
+          <Footer></Footer>
+        </BrowserRouter>
+      </AuthProvider>
     </div>
   );
 }

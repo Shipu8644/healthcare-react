@@ -4,7 +4,7 @@ import { NavLink } from 'react-router-dom';
 const Registration = () => {
     return (
         <div className='login  mt-5 mb-5'>
-            <h1 className='text-info'>Sign Up Here</h1>
+            <h1 className='text-info mt-5'>Sign Up Here</h1>
             <div>
                 <input type="text" name="" id="" placeholder='Enter your name' />
                 <br />

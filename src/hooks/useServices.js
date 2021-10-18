@@ -1,10 +1,10 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState } from "react";
 
 const useServices = () => {
     const [services, setServices] = useState([]);
 
     useEffect(() => {
-        fetch('./services.json')
+        fetch('https://raw.githubusercontent.com/Shipu8644/healthcare-react/main/public/services.json')
             .then(res => res.json())
             .then(data => setServices(data))
     }, [])
