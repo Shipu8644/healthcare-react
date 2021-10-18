@@ -3,13 +3,16 @@ import { NavLink } from 'react-router-dom';
 import { getAuth, createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import initializeAuthentication from '../Login/Firebase/firebase.init';
 import { Form } from 'react-bootstrap';
+import { useHistory } from 'react-router';
 initializeAuthentication();
 const Registration = () => {
     const auth = getAuth();
+    const [user, setUser] = useState('');
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState();
+    const history = useHistory();
     //    getname
     const handleNameChange = e => {
         setName(e.target.value);
@@ -44,6 +47,7 @@ const Registration = () => {
 
                 const user = result.user;
                 console.log(user);
+                setUser(user);
                 setError('');
                 setUserName();
             })
@@ -60,7 +64,8 @@ const Registration = () => {
         }).catch((error) => {
 
         });
-
+        alert('Registration Successful!! Now you can login')
+        history.push('/login');
     }
     return (
         <Form onSubmit={handleSignUp} className='login  mt-5 mb-5'>
