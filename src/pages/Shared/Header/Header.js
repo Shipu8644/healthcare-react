@@ -2,7 +2,7 @@
 import React from 'react';
 import { Container, Form, FormControl, Nav, Navbar } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+import { HashLink } from 'react-router-hash-link';
 const Header = () => {
     return (
         <div className='pb-1'>
@@ -18,7 +18,7 @@ const Header = () => {
                         >
                             <Nav.Link as={Link} className="text-white me-3" to='/home'>Home</Nav.Link>
                             <Nav.Link className="text-white me-3" href="#action2">About Us</Nav.Link>
-                            <Nav.Link className="text-white me-3" href="#action2">Services</Nav.Link>
+                            <Nav.Link as={HashLink} className="text-white me-3" to='/home#services'>Services</Nav.Link>
                             <Nav.Link className="text-white me-3" href="#action2">Doctors</Nav.Link>
 
                             <Nav.Link className="text-white me-3" href="#action2">Contact Us</Nav.Link>

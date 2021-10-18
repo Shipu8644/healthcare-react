@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Skin Care",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ytimg.com/vi/vtlOYbVXfns/sddefault.jpg#404_is_fine"
+    },
+    {
+        "id": 2,
+        "name": "Infection control",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://www.kortastraining.com/wp-content/uploads/2020/07/133.jpg"
+    },
+    {
+        "id": 3,
+        "name": "Mental development",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://i.ytimg.com/vi/Lx2I4qUMPu4/maxresdefault.jpg"
+    },
+    {
+        "id": 4,
+        "name": "Nutrition",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://previews.123rf.com/images/nataliaderiabina/nataliaderiabina1807/nataliaderiabina180700012/104907079-healthy-child-nutrition-food-background-top-view-baby-8-months-old-surrounded-with-different-fresh-f.jpg"
+    },
+    {
+        "id": 5,
+        "name": "Dental care",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa.",
+        "img": "https://asterclinic.ae/blog/wp-content/uploads/2017/12/baby-dentist-final.png"
+    },
+    {
+        "id": 6,
+        "name": "Pharmacy",
+        "description": "Lorem ipsum dolor sit amet, consectetu radipisi cing elitBeatae autem aperiam nequ quaera molestias voluptatibus harum ametipsa",
+        "img": "https://i.pinimg.com/originals/27/f7/8d/27f78dcbbd2979735025d2d118f1a9bc.jpg"
+    }
+]

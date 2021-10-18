@@ -8,6 +8,7 @@ import NotFound from './pages/NotFound/NotFound';
 import Footer from './pages/Shared/Footer/Footer';
 import Login from './pages/Login/Login/Login';
 import Registration from './pages/Registration/Registration';
+import Details from './pages/Details/Details';
 
 
 function App() {
@@ -28,6 +29,9 @@ function App() {
           </Route>
           <Route path='/registration'>
             <Registration></Registration>
+          </Route>
+          <Route path='/detail/:id'>
+            <Details></Details>
           </Route>
           <Route to='*'>
             <NotFound></NotFound>
