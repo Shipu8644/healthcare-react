@@ -4,16 +4,13 @@ import initializeAuthentication from "../pages/Login/Firebase/firebase.init";
 initializeAuthentication();
 
 const useFirebase = () => {
-    const [user, setUser] = useState();
-    const [error, setError] = useState();
+    const [user, setUser] = useState({});
+    const [error, setError] = useState("");
     const googleProvider = new GoogleAuthProvider();
     const auth = getAuth();
 
     const signInGoogle = () => {
         return signInWithPopup(auth, googleProvider)
-            // .then(result => {
-            //     setUser(result.user);
-            // })
             .catch(error => {
                 setError(error.message);
             })

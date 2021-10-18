@@ -6,6 +6,7 @@ import { HashLink } from 'react-router-hash-link';
 import useAuth from '../../../hooks/useAuth';
 const Header = () => {
     const { user, logout } = useAuth();
+    console.log(user);
     return (
         <div className='pb-1'>
             <Navbar fixed="top" className='text-white ' bg="info" expand="lg" >
