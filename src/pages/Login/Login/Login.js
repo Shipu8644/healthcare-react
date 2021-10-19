@@ -3,15 +3,13 @@ import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import { useHistory, useLocation } from 'react-router';
 import './Login.css';
-// import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-// import initializeAuthentication from '../Firebase/firebase.init';
 import { Form } from 'react-bootstrap';
-// initializeAuthentication();
+
 const Login = () => {
     const { processLogIn } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState();
+    const [error, setError] = useState("");
     const { signInGoogle } = useAuth();
     const location = useLocation();
     const redirect = location.state?.from || '/home';
@@ -42,8 +40,10 @@ const Login = () => {
             .then(() => {
                 history.push(redirect);
             })
+            .catch((error) => {
+                setError(error.message);
+            })
     }
-
 
     const manageRedirectory = () => {
         signInGoogle()

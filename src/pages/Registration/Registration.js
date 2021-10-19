@@ -11,11 +11,12 @@ const Registration = () => {
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [error, setError] = useState();
+    const [error, setError] = useState('');
 
     const location = useLocation();
     const history = useHistory();
     const redirect = location.state?.from || '/home';
+
     //    getname
     const handleNameChange = e => {
         setName(e.target.value);
@@ -48,6 +49,9 @@ const Registration = () => {
             .then(() => {
                 history.push(redirect);
                 setUserName(name);
+            })
+            .catch((error) => {
+                setError(error.message);
             })
 
     }

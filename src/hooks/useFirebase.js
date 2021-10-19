@@ -23,16 +23,9 @@ const useFirebase = () => {
     const registerNewUser = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
 
-            .catch(error => {
-                setError(error.message);
-            })
     }
     const processLogIn = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
-
-            .catch(error => {
-                setError(error.message);
-            })
     }
     const setUserName = (name) => {
         updateProfile(auth.currentUser, {
@@ -61,8 +54,6 @@ const useFirebase = () => {
     const logout = () => {
         signOut(auth).then(() => {
             setUser({})
-        }).catch((error) => {
-            setError(error.message);
         })
             .finally(() => setIsLoading(false));
     }
@@ -74,7 +65,8 @@ const useFirebase = () => {
         isLoading,
         registerNewUser,
         setUserName,
-        processLogIn
+        processLogIn,
+        error
     }
 }
 export default useFirebase;
