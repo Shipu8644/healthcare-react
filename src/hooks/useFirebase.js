@@ -24,9 +24,11 @@ const useFirebase = () => {
         return createUserWithEmailAndPassword(auth, email, password)
 
     }
+
     const processLogIn = (email, password) => {
         return signInWithEmailAndPassword(auth, email, password)
     }
+
     const setUserName = (name) => {
         updateProfile(auth.currentUser, {
             displayName: name
