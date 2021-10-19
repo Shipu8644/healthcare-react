@@ -35,7 +35,7 @@ const Header = () => {
                         {user?.email ?
                             <div className='d-flex flex-column flex-lg-row'>
                                 <Nav.Link onClick={logout} className="text-white me-2" as={Link} to='/login'>Logout</Nav.Link>
-                                <span className='mt-2 text-warning'>Sign in as: {user.displayName}</span>
+                                <span className='mt-2 text-warning'>Sign in as: <span className='text-decoration-underline'>{user.displayName}</span></span>
                             </div>
 
                             :

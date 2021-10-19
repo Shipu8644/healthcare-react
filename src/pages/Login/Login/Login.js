@@ -24,7 +24,7 @@ const Login = () => {
     const handlePasswordChange = e => {
         setPassword(e.target.value);
     }
-    const handleSignUp = (e) => {
+    const handleSignIn = (e) => {
         e.preventDefault();
         console.log(email, password);
         console.log(password.length);
@@ -54,7 +54,7 @@ const Login = () => {
 
 
     return (
-        <Form onSubmit={handleSignUp} className="login  mt-5 mb-5  ">
+        <Form onSubmit={handleSignIn} className="login  mt-5 mb-5  ">
             <h1 className='text-info'>Login Here</h1>
             <div>
                 <input onBlur={handleEmailChange} type="email" name="" id="" placeholder="Enter your email" required />

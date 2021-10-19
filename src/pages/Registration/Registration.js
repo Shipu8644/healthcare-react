@@ -15,7 +15,7 @@ const Registration = () => {
 
     const location = useLocation();
     const history = useHistory();
-    const redirect = location.state?.from || '/home';
+    // const redirect = location.state?.from || '/home';
 
     //    getname
     const handleNameChange = e => {
@@ -47,7 +47,7 @@ const Registration = () => {
         }
         registerNewUser(email, password)
             .then(() => {
-                history.push(redirect);
+                history.push('/home');
                 setUserName(name);
             })
             .catch((error) => {

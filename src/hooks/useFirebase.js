@@ -68,7 +68,7 @@ const useFirebase = () => {
         registerNewUser,
         setUserName,
         processLogIn,
-        error
+
     }
 }
 export default useFirebase;
