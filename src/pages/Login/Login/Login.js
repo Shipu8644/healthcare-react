@@ -3,13 +3,12 @@ import { NavLink } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 import { useHistory, useLocation } from 'react-router';
 import './Login.css';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
-import initializeAuthentication from '../Firebase/firebase.init';
+// import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+// import initializeAuthentication from '../Firebase/firebase.init';
 import { Form } from 'react-bootstrap';
-import useFirebase from '../../../hooks/useFirebase';
-initializeAuthentication();
+// initializeAuthentication();
 const Login = () => {
-    const auth = getAuth();
+    const { processLogIn } = useAuth();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState();
@@ -18,10 +17,10 @@ const Login = () => {
     const redirect = location.state?.from || '/home';
     const history = useHistory();
 
+    //getEmail
     const handleEmailChange = (e) => {
         setEmail(e.target.value);
     }
-
 
     //    getpassword
     const handlePasswordChange = e => {
@@ -39,22 +38,9 @@ const Login = () => {
             setError('Password must contain 2 uppercase letter');
             return;
         }
-        processLogIn(email, password);
-    }
-
-
-
-    const processLogIn = (email, password) => {
-        signInWithEmailAndPassword(auth, email, password)
-            .then((result) => {
-                const user = result.user;
-                console.log(user);
-                setError('');
+        processLogIn(email, password)
+            .then(() => {
                 history.push(redirect);
-            })
-
-            .catch(error => {
-                setError(error.message);
             })
     }
 
@@ -81,17 +67,14 @@ const Login = () => {
                 <button type='submit' className='bg-info rounded text-white' style={{ width: "50%" }}>Sign In </button>
                 <br />
                 <br />
-                <button onClick={manageRedirectory} className='bg-info rounded text-white' style={{ width: "50%" }}>Sign In With Goolge</button>
+                <button onClick={manageRedirectory} className='bg-info rounded text-white' style={{ width: "50%" }}>Sign In With Google</button>
                 <br />
                 <br />
                 <NavLink to='/registration'>
                     <p>New in account?</p>
                 </NavLink>
 
-
             </div>
-
-
         </Form>
     );
 };
